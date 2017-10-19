@@ -1,0 +1,29 @@
+﻿生成启动时间为 2017/10/14 11:14:35。
+     1>项目“F:\combus\Ctestdll\Ctestdll\Ctestdll.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“Release\Ctestdll.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“Release\Ctestdll.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\Ctestdll.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\Ctestdll.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Ctestdll.cpp
+         Ctestdll.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\combus\Ctestdll\Release\Ctestdll.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2012\extern\lib\win64\microsoft" libeng.lib libmat.lib libmex.lib libmx.lib mclmcrrt.lib mclmcr.lib add.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Ctestdll.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\combus\Ctestdll\Release\Ctestdll.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\combus\Ctestdll\Release\Ctestdll.lib" /MACHINE:X86 Release\Ctestdll.obj
+         Release\stdafx.obj
+         add.lib
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _ref_count_obj_addref_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _error_info_get_message_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _ref_count_obj_release_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _mclcppCreateError_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _mclcppGetLastError_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _mclGetMatrix_proxy
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 "__declspec(dllimport) void __cdecl myadd(int,class mwArray &,class mwArray const &,class mwArray const &)" (__imp_?myadd@@YAXHAAVmwArray@@ABV1@1@Z)
+     1>Ctestdll.obj : error LNK2001: 无法解析的外部符号 _addInitialize
+     1>F:\combus\Ctestdll\Release\Ctestdll.exe : fatal error LNK1120: 8 个无法解析的外部命令
+     1>已完成生成项目“F:\combus\Ctestdll\Ctestdll\Ctestdll.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:02.90
