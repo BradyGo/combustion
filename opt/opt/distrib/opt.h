@@ -1,13 +1,13 @@
 //
 // MATLAB Compiler: 4.17 (R2012a)
-// Date: Sat Oct 14 15:21:28 2017
+// Date: Sat Nov 11 15:53:22 2017
 // Arguments: "-B" "macro_default" "-W" "cpplib:opt" "-T" "link:lib" "-d"
 // "F:\combus\opt\opt\src" "-w" "enable:specified_file_mismatch" "-w"
 // "enable:repeated_file" "-w" "enable:switch_ignored" "-w"
 // "enable:missing_lib_sentinel" "-w" "enable:demo_license" "-v"
 // "F:\combus\opt\EvalIms.m" "F:\combus\opt\EvalTree.m"
 // "F:\combus\opt\FTreeIII.m" "F:\combus\opt\insensitivelearning.m"
-// "F:\combus\opt\main.m" 
+// "F:\combus\opt\myadd.m" "F:\combus\opt\optmain.m" 
 //
 
 #ifndef __opt_h
@@ -92,7 +92,10 @@ bool MW_CALL_CONV mlxInsensitivelearning(int nlhs, mxArray *plhs[], int nrhs, mx
                                          *prhs[]);
 
 extern LIB_opt_C_API 
-bool MW_CALL_CONV mlxMain(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[]);
+bool MW_CALL_CONV mlxMyadd(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[]);
+
+extern LIB_opt_C_API 
+bool MW_CALL_CONV mlxOptmain(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[]);
 
 
 #ifdef __cplusplus
@@ -132,7 +135,9 @@ extern LIB_opt_CPP_API void MW_CALL_CONV FTreeIII(int nargout, mwArray& Tree, mw
 
 extern LIB_opt_CPP_API void MW_CALL_CONV insensitivelearning(int nargout, mwArray& w, const mwArray& X, const mwArray& Y, const mwArray& nAugX, const mwArray& r);
 
-extern LIB_opt_CPP_API void MW_CALL_CONV main(int nargout, mwArray& xxx, const mwArray& aaa, const mwArray& bbb);
+extern LIB_opt_CPP_API void MW_CALL_CONV myadd(int nargout, mwArray& c, const mwArray& a, const mwArray& b);
+
+extern LIB_opt_CPP_API void MW_CALL_CONV optmain(int nargout, mwArray& xxx, const mwArray& aaa, const mwArray& bbb);
 
 #endif
 #endif

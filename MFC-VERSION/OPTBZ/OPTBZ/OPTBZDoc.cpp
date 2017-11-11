@@ -13,6 +13,21 @@
 
 #include <propkey.h>
 
+
+ #include <iostream>
+
+ #include "opt.h"
+ 
+#include "mclmcr.h"
+
+ #include "matrix.h"
+
+ #include "mclcppclass.h"
+
+using namespace std;
+
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -30,6 +45,27 @@ END_MESSAGE_MAP()
 COPTBZDoc::COPTBZDoc()
 {
 	// TODO: 在此添加一次性构造代码
+	if(!optInitialize())
+	{
+		cout<<"init error"<<endl;
+	}
+	
+	// 为变量分配内存空间，可以查帮助mwArray
+	mwArray a(1,1,mxDOUBLE_CLASS);
+    mwArray b(1,1,mxDOUBLE_CLASS);
+	a(1,1)=20;
+    b(1,1)=30;
+	mwArray x(1,1,mxDOUBLE_CLASS);
+
+	optmain(1,x,a,b);
+
+
+	double *i=new double;
+	 x.GetData(i,1);
+	 cout<<"x="<<*i<<endl; 
+
+
+
 
 }
 

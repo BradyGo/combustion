@@ -71,6 +71,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\MATLAB\R2012a\bin\win64;C:\Program Files\MATLAB\R2012\extern\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files\MATLAB\R2012a\bin\win64;F:\combus\MFC-VERSION\OPTBZ\OPTBZ;C:\Program Files\MATLAB\R2012\extern\lib\win64\microsoft;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -111,7 +113,8 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>odbc32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>odbc32.lib;libeng.lib;libmat.lib;libmex.lib;libmx.lib;mclmcrrt.lib;mclmcr.lib;opt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2012\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -177,6 +180,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="opt.dll" />
     <None Include="ReadMe.txt" />
     <None Include="res\classview.bmp" />
     <None Include="res\classview_hc.bmp" />
@@ -210,6 +214,7 @@
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="FileView.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="opt.h" />
     <ClInclude Include="OPTBZ.h" />
     <ClInclude Include="OPTBZDoc.h" />
     <ClInclude Include="OPTBZView.h" />
@@ -240,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OPTBZ.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="opt.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

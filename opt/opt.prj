@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.library.cpp" target-name="C++ Shared Library" name="opt" location="F:\combus\opt" file="F:\combus\opt\opt.prj" build-checksum="3788141850">
+  <configuration target="target.library.cpp" target-name="C++ Shared Library" name="opt" location="F:\combus\opt" file="F:\combus\opt\opt.prj" build-checksum="4027757185">
     <param.project.name>F:\combus\opt\opt.prj</param.project.name>
     <param.target.type>C++ Shared Library</param.target.type>
     <param.appname>opt</param.appname>
     <param.intermediate>${PROJECT_ROOT}\opt\src</param.intermediate>
-    <param.output>${PROJECT_ROOT}\opt\distrib</param.output>
+    <param.output>F:\combus\MFC-VERSION\OPTBZ\OPTBZ</param.output>
     <param.embed.ctf>true</param.embed.ctf>
     <param.tbx_on_path>
       <item>all</item>
@@ -37,7 +37,6 @@
       <param.target.type />
       <param.appname />
       <param.intermediate />
-      <param.output />
       <param.embed.ctf />
       <param.tbx_on_path />
       <param.warnings />
@@ -62,22 +61,21 @@
       <file>${PROJECT_ROOT}\EvalTree.m</file>
       <file>${PROJECT_ROOT}\FTreeIII.m</file>
       <file>${PROJECT_ROOT}\insensitivelearning.m</file>
-      <file>${PROJECT_ROOT}\main.m</file>
+      <file>${PROJECT_ROOT}\optmain.m</file>
     </fileset.exports>
     <fileset.resources />
     <fileset.package />
     <build-deliverables>
-      <file name="readme.txt" location="${PROJECT_ROOT}\opt\distrib" optional="true">F:\combus\opt\opt\distrib\readme.txt</file>
-      <file name="opt.h" location="${PROJECT_ROOT}\opt\distrib" optional="false">F:\combus\opt\opt\distrib\opt.h</file>
-      <file name="opt.dll" location="${PROJECT_ROOT}\opt\distrib" optional="false">F:\combus\opt\opt\distrib\opt.dll</file>
-      <file name="opt.lib" location="${PROJECT_ROOT}\opt\distrib" optional="false">F:\combus\opt\opt\distrib\opt.lib</file>
+      <file name="opt.h" location="F:\combus\MFC-VERSION\OPTBZ\OPTBZ" optional="false">F:\combus\MFC-VERSION\OPTBZ\OPTBZ\opt.h</file>
+      <file name="opt.lib" location="F:\combus\MFC-VERSION\OPTBZ\OPTBZ" optional="false">F:\combus\MFC-VERSION\OPTBZ\OPTBZ\opt.lib</file>
+      <file name="opt.dll" location="F:\combus\MFC-VERSION\OPTBZ\OPTBZ" optional="false">F:\combus\MFC-VERSION\OPTBZ\OPTBZ\opt.dll</file>
+      <file name="readme.txt" location="F:\combus\MFC-VERSION\OPTBZ\OPTBZ" optional="true">F:\combus\MFC-VERSION\OPTBZ\OPTBZ\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\R2012</root>
+      <root>C:\Program Files\MATLAB\R2012a</root>
       <path>
-        <directory>F:\combus</directory>
-        <directory>C:\Users\kying\Documents\MATLAB</directory>
+        <directory>C:\Users\Admin\Documents\MATLAB</directory>
         <directory>${MATLAB_ROOT}\toolbox\hdlcoder\matlabhdlcoder\matlabhdlcoder</directory>
         <directory>${MATLAB_ROOT}\toolbox\hdlcoder\matlabhdlcoder</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlabxl\matlabxl</directory>

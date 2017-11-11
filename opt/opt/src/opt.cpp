@@ -1,13 +1,13 @@
 //
 // MATLAB Compiler: 4.17 (R2012a)
-// Date: Sat Oct 14 15:21:28 2017
+// Date: Sat Nov 11 16:56:49 2017
 // Arguments: "-B" "macro_default" "-W" "cpplib:opt" "-T" "link:lib" "-d"
 // "F:\combus\opt\opt\src" "-w" "enable:specified_file_mismatch" "-w"
 // "enable:repeated_file" "-w" "enable:switch_ignored" "-w"
 // "enable:missing_lib_sentinel" "-w" "enable:demo_license" "-v"
 // "F:\combus\opt\EvalIms.m" "F:\combus\opt\EvalTree.m"
 // "F:\combus\opt\FTreeIII.m" "F:\combus\opt\insensitivelearning.m"
-// "F:\combus\opt\main.m" 
+// "F:\combus\opt\optmain.m" 
 //
 
 #include <stdio.h>
@@ -161,9 +161,9 @@ bool MW_CALL_CONV mlxInsensitivelearning(int nlhs, mxArray *plhs[], int nrhs, mx
 }
 
 LIB_opt_C_API 
-bool MW_CALL_CONV mlxMain(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[])
+bool MW_CALL_CONV mlxOptmain(int nlhs, mxArray *plhs[], int nrhs, mxArray *prhs[])
 {
-  return mclFeval(_mcr_inst, "main", nlhs, plhs, nrhs, prhs);
+  return mclFeval(_mcr_inst, "optmain", nlhs, plhs, nrhs, prhs);
 }
 
 LIB_opt_CPP_API 
@@ -196,8 +196,9 @@ void MW_CALL_CONV insensitivelearning(int nargout, mwArray& w, const mwArray& X,
 }
 
 LIB_opt_CPP_API 
-void MW_CALL_CONV main(int nargout, mwArray& xxx, const mwArray& aaa, const mwArray& bbb)
+void MW_CALL_CONV optmain(int nargout, mwArray& xxx, const mwArray& aaa, const mwArray& 
+                          bbb)
 {
-  mclcppMlfFeval(_mcr_inst, "main", nargout, 1, 2, &xxx, &aaa, &bbb);
+  mclcppMlfFeval(_mcr_inst, "optmain", nargout, 1, 2, &xxx, &aaa, &bbb);
 }
 

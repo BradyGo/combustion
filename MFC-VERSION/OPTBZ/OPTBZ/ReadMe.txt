@@ -1,111 +1,51 @@
-================================================================================
-MICROSOFT »ù´¡Àà¿â: OPTBZ ÏîÄ¿¸ÅÊö
-===============================================================================
+MATLAB Compiler
 
-Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÎªÄú´´½¨ÁËÕâ¸ö OPTBZ Ó¦ÓÃ³ÌÐò¡£´ËÓ¦ÓÃ³ÌÐò²»½öÑÝÊ¾ Microsoft »ù´¡ÀàµÄ»ù±¾Ê¹ÓÃ·½·¨£¬»¹¿É×÷ÎªÄú±àÐ´Ó¦ÓÃ³ÌÐòµÄÆðµã¡£
+1. Prerequisites for Deployment 
 
-±¾ÎÄ¼þ¸ÅÒª½éÉÜ×é³É OPTBZ Ó¦ÓÃ³ÌÐòµÄÃ¿¸öÎÄ¼þµÄÄÚÈÝ¡£
+. Verify the MATLAB Compiler Runtime (MCR) is installed and ensure you    
+  have installed version 7.17 (R2012a).   
 
-OPTBZ.vcxproj
-ÕâÊÇÊ¹ÓÃÓ¦ÓÃ³ÌÐòÏòµ¼Éú³ÉµÄ VC++ ÏîÄ¿µÄÖ÷ÏîÄ¿ÎÄ¼þ¡£ 
-Ëü°üº¬Éú³É¸ÃÎÄ¼þµÄ Visual C++ µÄ°æ±¾ÐÅÏ¢£¬ÒÔ¼°ÓÐ¹ØÊ¹ÓÃÓ¦ÓÃ³ÌÐòÏòµ¼Ñ¡ÔñµÄÆ½Ì¨¡¢ÅäÖÃºÍÏîÄ¿¹¦ÄÜµÄÐÅÏ¢¡£
+. If the MCR is not installed, do following:
+  (1) enter
+  
+      >>mcrinstaller
+      
+      at MATLAB prompt. This MCR Installer command displays the 
+      location of the MCR Installer.
 
-OPTBZ.vcxproj.filters
-    ÕâÊÇÊ¹ÓÃ¡°Ó¦ÓÃ³ÌÐòÏòµ¼¡±Éú³ÉµÄ VC++ ÏîÄ¿É¸Ñ¡Æ÷ÎÄ¼þ¡£
-    Ëü°üº¬ÓÐ¹ØÏîÄ¿ÎÄ¼þÓëÉ¸Ñ¡Æ÷Ö®¼äµÄ¹ØÁªÐÅÏ¢¡£ÔÚ IDE ÖÐ£¬Í¨¹ýÕâÖÖ¹ØÁª£¬ÔÚÌØ¶¨½ÚµãÏÂÒÔ·Ö×éÐÎÊ½ÏÔÊ¾¾ßÓÐÏàËÆÀ©Õ¹ÃûµÄÎÄ¼þ¡£ÀýÈç£¬¡°.cpp¡±ÎÄ¼þÓë¡°Ô´ÎÄ¼þ¡±É¸Ñ¡Æ÷¹ØÁª¡£
+  (2) run the MCR Installer.
 
-OPTBZ.h
-ÕâÊÇÓ¦ÓÃ³ÌÐòµÄÖ÷ÒªÍ·ÎÄ¼þ¡£Ëü°üÀ¨ÆäËûÏîÄ¿ÌØ¶¨µÄÍ·ÎÄ¼þ(°üÀ¨ Resource.h)£¬²¢ÉùÃ÷ COPTBZApp Ó¦ÓÃ³ÌÐòÀà¡£
+Or download Windows 64bit version of MCR from the MathWorks website:
 
-OPTBZ.cpp
-ÕâÊÇ°üº¬Ó¦ÓÃ³ÌÐòÀà COPTBZApp µÄÖ÷ÒªÓ¦ÓÃ³ÌÐòÔ´ÎÄ¼þ¡£
+   http://www.mathworks.com/products/compiler/
+   
+   
+For more information about the MCR and the MCR Installer, see 
+“Working With the MCR” in the MATLAB Compiler User’s Guide.    
 
-OPTBZ.rc
-ÕâÊÇ³ÌÐòÊ¹ÓÃµÄËùÓÐ Microsoft Windows ×ÊÔ´µÄÁÐ±í¡£Ëü°üÀ¨ RES ×ÓÄ¿Â¼ÖÐ´æ´¢µÄÍ¼±ê¡¢Î»Í¼ºÍ¹â±ê¡£´ËÎÄ¼þ¿ÉÒÔÖ±½ÓÔÚ Microsoft Visual C++ ÖÐ½øÐÐ±à¼­¡£ÏîÄ¿×ÊÔ´Î»ÓÚ 2052 ÖÐ¡£
 
-res\OPTBZ.ico
-ÕâÊÇÓÃ×÷Ó¦ÓÃ³ÌÐòÍ¼±êµÄÍ¼±êÎÄ¼þ¡£´ËÍ¼±ê°üÀ¨ÔÚÖ÷Òª×ÊÔ´ÎÄ¼þ OPTBZ.rc ÖÐ¡£
+NOTE: You will need administrator rights to run MCRInstaller. 
 
-res\OPTBZ.rc2
-´ËÎÄ¼þ°üº¬²»ÔÚ Microsoft Visual C++ ÖÐ½øÐÐ±à¼­µÄ×ÊÔ´¡£ÄúÓ¦¸Ã½«²»¿ÉÓÉ×ÊÔ´±à¼­Æ÷±à¼­µÄËùÓÐ×ÊÔ´·ÅÔÚ´ËÎÄ¼þÖÐ¡£
 
-/////////////////////////////////////////////////////////////////////////////
+2. Files to Deploy and Package
 
-¶ÔÓÚÖ÷¿ò¼Ü´°¿Ú:
-ÏîÄ¿°üº¬±ê×¼ MFC ½çÃæ¡£
+Files to package for Shared Libraries
+=====================================
+-opt.dll
+-opt.h
+-opt.lib
+-MCRInstaller.exe 
+   - include when building component by clicking "Add MCR" link
+     in deploytool
+-This readme file
 
-MainFrm.h, MainFrm.cpp
-ÕâÐ©ÎÄ¼þ°üº¬¿ò¼ÜÀà CMainFrame£¬¸ÃÀàÅÉÉú×Ô
-CMDIFrameWnd ²¢¿ØÖÆËùÓÐ MDI ¿ò¼Ü¹¦ÄÜ¡£
+3. Definitions
 
-/////////////////////////////////////////////////////////////////////////////
-
-¶ÔÓÚ×Ó¿ò¼Ü´°¿Ú:
-
-ChildFrm.h£¬ChildFrm.cpp
-ÕâÐ©ÎÄ¼þ¶¨Òå²¢ÊµÏÖ CChildFrame Àà£¬¸ÃÀàÖ§³Ö MDI Ó¦ÓÃ³ÌÐòÖÐµÄ×Ó´°¿Ú¡£
-
-/////////////////////////////////////////////////////////////////////////////
-
-Ó¦ÓÃ³ÌÐòÏòµ¼´´½¨Ò»¸öÎÄµµÀàÐÍºÍÒ»¸öÊÓÍ¼:
-
-OPTBZDoc.h£¬OPTBZDoc.cpp - ÎÄµµ
-ÕâÐ©ÎÄ¼þ°üº¬ COPTBZDoc Àà¡£±à¼­ÕâÐ©ÎÄ¼þ¿ÉÒÔÌí¼ÓÌØÊâÎÄµµÊý¾Ý²¢¿ÉÊµÏÖÎÄ¼þ±£´æºÍ¼ÓÔØ(Í¨¹ý COPTBZDoc::Serialize)¡£
-
-OPTBZView.h£¬OPTBZView.cpp - ÎÄµµµÄÊÓÍ¼
-ÕâÐ©ÎÄ¼þ°üº¬ COPTBZView Àà¡£
-COPTBZView ¶ÔÏóÓÃÓÚ²é¿´ COPTBZDoc ¶ÔÏó¡£
-
-res\OPTBZDoc.ico
-ÕâÊÇÍ¼±êÎÄ¼þ£¬ËüÓÃ×÷ COPTBZDoc ÀàµÄ MDI ×Ó´°¿ÚµÄÍ¼±ê¡£´ËÍ¼±ê°üÀ¨ÔÚÖ÷Òª×ÊÔ´ÎÄ¼þ OPTBZ.rc ÖÐ¡£
+For information on deployment terminology, go to 
+http://www.mathworks.com/help. Select your product and see 
+the Glossary in the User’s Guide.
 
 
 
 
-/////////////////////////////////////////////////////////////////////////////
 
-ÆäËû¹¦ÄÜ:
-
-ActiveX ¿Ø¼þ
-Ó¦ÓÃ³ÌÐò°üÀ¨¶ÔÊ¹ÓÃ ActiveX ¿Ø¼þµÄÖ§³Ö¡£
-
-´òÓ¡¼°´òÓ¡Ô¤ÀÀÖ§³Ö
-Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÍ¨¹ý´Ó MFC ¿âµ÷ÓÃ CView ÀàÖÐµÄ³ÉÔ±º¯Êý£¬Éú³ÉÁËÓÃÓÚ´¦Àí´òÓ¡¡¢´òÓ¡ÉèÖÃºÍ´òÓ¡Ô¤ÀÀÃüÁîµÄ´úÂë¡£
-
-Êý¾Ý¿âÖ§³Ö
-Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÎª³ÌÐòÌí¼ÓÁË»ù´¡¼¶±ðµÄÊý¾Ý¿âÖ§³Ö¡£ 
-Ö»°üÀ¨ÁËËùÐèµÄÎÄ¼þ¡£
-
-²ð·Ö´°¿Ú
-Ó¦ÓÃ³ÌÐòÏòµ¼ÒÑÎªÓ¦ÓÃ³ÌÐòÎÄµµÌí¼ÓÁË²ð·Ö´°¿ÚÖ§³Ö¡£
-
-Windows Sockets
-Ó¦ÓÃ³ÌÐòÖ§³ÖÍ¨¹ý TCP/IP ÍøÂç½¨Á¢Í¨ÐÅ¡£
-
-/////////////////////////////////////////////////////////////////////////////
-
-ÆäËû±ê×¼ÎÄ¼þ:
-
-StdAfx.h£¬StdAfx.cpp
-ÕâÐ©ÎÄ¼þÓÃÓÚÉú³ÉÃûÎª OPTBZ.pch µÄÔ¤±àÒëÍ· (PCH) ÎÄ¼þºÍÃûÎª StdAfx.obj µÄÔ¤±àÒëÀàÐÍÎÄ¼þ¡£
-
-Resource.h
-ÕâÊÇ±ê×¼Í·ÎÄ¼þ£¬Ëü¶¨ÒåÐÂµÄ×ÊÔ´ ID¡£
-Microsoft Visual C++ ¶ÁÈ¡²¢¸üÐÂ´ËÎÄ¼þ¡£
-
-OPTBZ.manifest
-	Ó¦ÓÃ³ÌÐòÇåµ¥ÎÄ¼þ¹© Windows XP ÓÃÀ´ÃèÊöÓ¦ÓÃ³ÌÐò
-	¶ÔÌØ¶¨°æ±¾²¢ÐÐ³ÌÐò¼¯µÄÒÀÀµÐÔ¡£¼ÓÔØ³ÌÐòÊ¹ÓÃ´Ë
-	ÐÅÏ¢´Ó³ÌÐò¼¯»º´æ¼ÓÔØÊÊµ±µÄ³ÌÐò¼¯»ò
-	´ÓÓ¦ÓÃ³ÌÐò¼ÓÔØË½ÓÐÐÅÏ¢¡£Ó¦ÓÃ³ÌÐòÇåµ¥¿ÉÄÜÎªÁËÖØÐÂ·Ö·¢¶ø×÷Îª
-	ÓëÓ¦ÓÃ³ÌÐò¿ÉÖ´ÐÐÎÄ¼þ°²×°ÔÚÏàÍ¬ÎÄ¼þ¼ÐÖÐµÄÍâ²¿ .manifest ÎÄ¼þ°üÀ¨£¬
-	Ò²¿ÉÄÜÒÔ×ÊÔ´µÄÐÎÊ½°üÀ¨ÔÚ¸Ã¿ÉÖ´ÐÐÎÄ¼þÖÐ¡£ 
-/////////////////////////////////////////////////////////////////////////////
-
-ÆäËû×¢ÊÍ:
-
-Ó¦ÓÃ³ÌÐòÏòµ¼Ê¹ÓÃ¡°TODO:¡±Ö¸Ê¾Ó¦Ìí¼Ó»ò×Ô¶¨ÒåµÄÔ´´úÂë²¿·Ö¡£
-
-Èç¹ûÓ¦ÓÃ³ÌÐòÔÚ¹²ÏíµÄ DLL ÖÐÊ¹ÓÃ MFC£¬ÔòÐèÒªÖØÐÂ·¢²¼ÕâÐ© MFC DLL£»Èç¹ûÓ¦ÓÃ³ÌÐòËùÓÃµÄÓïÑÔÓë²Ù×÷ÏµÍ³µÄµ±Ç°ÇøÓòÉèÖÃ²»Í¬£¬Ôò»¹ÐèÒªÖØÐÂ·¢²¼¶ÔÓ¦µÄ±¾µØ»¯×ÊÔ´ MFC100XXX.DLL¡£ÓÐ¹ØÕâÁ½¸öÖ÷ÌâµÄ¸ü¶àÐÅÏ¢£¬Çë²Î¼û MSDN ÎÄµµÖÐÓÐ¹Ø Redistributing Visual C++ applications (ÖØÐÂ·¢²¼ Visual C++ Ó¦ÓÃ³ÌÐò)µÄÕÂ½Ú¡£
-
-/////////////////////////////////////////////////////////////////////////////

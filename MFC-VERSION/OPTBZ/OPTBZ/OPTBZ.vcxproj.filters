@@ -94,6 +94,9 @@
     <None Include="res\Toolbar256.bmp">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="opt.dll">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OPTBZ.h">
@@ -133,6 +136,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="PropertiesWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opt.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -175,5 +181,10 @@
     <ResourceCompile Include="OPTBZ.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="opt.lib">
+      <Filter>资源文件</Filter>
+    </Library>
   </ItemGroup>
 </Project>
