@@ -111,7 +111,7 @@ while( 1 )
         end
     end
     if flag == 1
-       %z disp('超过允许的叶节点数目')
+        disp('超过允许的叶节点数目')
         break
     end
     if length(Err) == depth
