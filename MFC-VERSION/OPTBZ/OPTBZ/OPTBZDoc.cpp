@@ -10,22 +10,17 @@
 #endif
 
 #include "OPTBZDoc.h"
-
 #include <propkey.h>
-
-
- #include <iostream>
-
- #include "opt.h"
- 
+#include <iostream>
+#include "opt.h"
 #include "mclmcr.h"
-
- #include "matrix.h"
-
- #include "mclcppclass.h"
+#include "matrix.h"
+#include "mclcppclass.h"
 
 using namespace std;
 
+
+CWinThread *pWinoptThread;
 
 
 #ifdef _DEBUG
@@ -41,6 +36,18 @@ END_MESSAGE_MAP()
 
 
 // COPTBZDoc ¹¹Ôì/Îö¹¹
+
+
+UINT optThread(LPVOID pParam)
+{
+
+	while (TRUE)
+	{
+		 AfxMessageBox (_T("ok"));
+		Sleep(10000);
+	}
+	return 0;
+}
 
 COPTBZDoc::COPTBZDoc()
 {
@@ -64,6 +71,7 @@ COPTBZDoc::COPTBZDoc()
 	 x.GetData(i,1);
 	 cout<<"x="<<*i<<endl; 
 
+	 pWinoptThread = AfxBeginThread(optThread,this);
 
 
 
@@ -135,6 +143,7 @@ void COPTBZDoc::InitializeSearchContent()
 	SetSearchContent(strSearchContent);
 }
 
+
 void COPTBZDoc::SetSearchContent(const CString& value)
 {
 	if (value.IsEmpty())
@@ -171,3 +180,4 @@ void COPTBZDoc::Dump(CDumpContext& dc) const
 
 
 // COPTBZDoc ÃüÁî
+
