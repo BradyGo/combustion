@@ -214,6 +214,7 @@
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="FileView.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="ModelView.h" />
     <ClInclude Include="opt.h" />
     <ClInclude Include="OPTBZ.h" />
     <ClInclude Include="OPTBZDoc.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="FileView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="ModelView.cpp" />
     <ClCompile Include="OPTBZ.cpp" />
     <ClCompile Include="OPTBZDoc.cpp" />
     <ClCompile Include="OPTBZView.cpp" />
@@ -252,4 +254,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="OPTBZ.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

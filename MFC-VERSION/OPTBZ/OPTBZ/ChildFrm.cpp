@@ -7,6 +7,9 @@
 
 #include "ChildFrm.h"
 
+#include "ModelView.h"
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -31,10 +34,38 @@ CChildFrame::~CChildFrame()
 
 BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/, CCreateContext* pContext)
 {
+/*
 	return m_wndSplitter.Create(this,
 		2, 2,			// TODO: 调整行数和列数
 		CSize(10, 10),	// TODO: 调整最小窗格大小
 		pContext);
+		*/
+
+	CRect rc;   
+
+	// 获取框架窗口客户区的CRect对象   
+	GetClientRect(&rc);   
+
+	// 创建静态分割窗口，两行一列   
+	if (!m_wndSplitter.CreateStatic(this, 2, 2))   
+		return FALSE;   
+
+	// 创建上面窗格中的视图   
+	if (!m_wndSplitter.CreateView(0, 0, RUNTIME_CLASS(CModelView),CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+
+	// 创建下面窗格中的视图   
+	if (!m_wndSplitter.CreateView(1, 0, RUNTIME_CLASS(CModelView), CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+	// 创建上面窗格中的视图   
+	if (!m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(CModelView),CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+
+	// 创建下面窗格中的视图   
+	if (!m_wndSplitter.CreateView(1, 1, RUNTIME_CLASS(CModelView), CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+
+	return TRUE;
 }
 
 BOOL CChildFrame::PreCreateWindow(CREATESTRUCT& cs)

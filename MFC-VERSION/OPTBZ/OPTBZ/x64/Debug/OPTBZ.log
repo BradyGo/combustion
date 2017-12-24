@@ -1,19 +1,20 @@
-﻿生成启动时间为 2017/12/22 22:58:44。
+﻿生成启动时间为 2017/12/24 16:22:59。
      1>项目“F:\combus\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“x64\Debug\OPTBZ.lastbuildstate”。
        InitializeBuildStatus:
-         正在对“x64\Debug\OPTBZ.unsuccessfulbuild”执行 Touch 任务。
+         正在创建“x64\Debug\OPTBZ.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"x64\Debug\OPTBZ.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
          stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\OPTBZ.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt ChildFrm.cpp ClassView.cpp FileView.cpp MainFrm.cpp OPTBZ.cpp OPTBZDoc.cpp OPTBZView.cpp OutputWnd.cpp PropertiesWnd.cpp ViewTree.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\OPTBZ.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt ChildFrm.cpp ClassView.cpp FileView.cpp MainFrm.cpp ModelView.cpp OPTBZ.cpp OPTBZDoc.cpp OPTBZView.cpp OutputWnd.cpp PropertiesWnd.cpp ViewTree.cpp
          ViewTree.cpp
          PropertiesWnd.cpp
          OutputWnd.cpp
          OPTBZView.cpp
          OPTBZDoc.cpp
          OPTBZ.cpp
+         ModelView.cpp
          MainFrm.cpp
          FileView.cpp
          ClassView.cpp
@@ -30,6 +31,7 @@
          x64\Debug\ClassView.obj
          x64\Debug\FileView.obj
          x64\Debug\MainFrm.obj
+         x64\Debug\ModelView.obj
          x64\Debug\OPTBZ.obj
          x64\Debug\OPTBZDoc.obj
          x64\Debug\OPTBZView.obj
@@ -50,6 +52,7 @@
          x64\Debug\ClassView.obj
          x64\Debug\FileView.obj
          x64\Debug\MainFrm.obj
+         x64\Debug\ModelView.obj
          x64\Debug\OPTBZ.obj
          x64\Debug\OPTBZDoc.obj
          x64\Debug\OPTBZView.obj
@@ -66,4 +69,4 @@
 
 生成成功。
 
-已用时间 00:00:04.72
+已用时间 00:00:05.11

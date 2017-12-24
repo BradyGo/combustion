@@ -7,6 +7,9 @@
 
 #include "MainFrm.h"
 
+#include "ModelView.h"
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -424,4 +427,30 @@ void CMainFrame::OnSettingChange(UINT uFlags, LPCTSTR lpszSection)
 {
 	CMDIFrameWndEx::OnSettingChange(uFlags, lpszSection);
 	m_wndOutput.UpdateFonts();
+}
+
+
+BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
+{
+	// TODO: 在此添加专用代码和/或调用基类
+
+/*
+	CRect rc;   
+	 
+	// 获取框架窗口客户区的CRect对象   
+	GetClientRect(&rc);   
+
+	// 创建静态分割窗口，两行一列   
+	if (!m_wndSplitter.CreateStatic(this, 2, 2))   
+		return FALSE;   
+
+	// 创建上面窗格中的视图   
+	if (!m_wndSplitter.CreateView(0, 0, RUNTIME_CLASS(CModelView),CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+
+	// 创建下面窗格中的视图   
+	if (!m_wndSplitter.CreateView(1, 0, RUNTIME_CLASS(CModelView), CSize(rc.Width()/2, rc.Height()/2), pContext))   
+		return FALSE;   
+		*/
+	return CMDIFrameWndEx::OnCreateClient(lpcs, pContext);
 }

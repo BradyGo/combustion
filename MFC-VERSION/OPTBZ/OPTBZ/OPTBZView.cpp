@@ -58,7 +58,8 @@ void COPTBZView::OnDraw(CDC* /*pDC*/)
 	ASSERT_VALID(pDoc);
 	if (!pDoc)
 		return;
-
+	int m_test;
+	m_test = 2;
 	// TODO: 在此处为本机数据添加绘制代码
 }
 

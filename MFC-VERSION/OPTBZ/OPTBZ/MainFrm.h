@@ -14,6 +14,8 @@ class CMainFrame : public CMDIFrameWndEx
 public:
 	CMainFrame();
 
+	CSplitterWnd m_wndSplitter;
+
 // Ьиад
 public:
 
@@ -56,6 +58,7 @@ protected:
 
 	BOOL CreateDockingWindows();
 	void SetDockingWindowIcons(BOOL bHiColorIcons);
+	virtual BOOL OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext);
 };
 
 

@@ -41,17 +41,6 @@ END_MESSAGE_MAP()
 UINT optThread(LPVOID pParam)
 {
 
-	while (TRUE)
-	{
-		 AfxMessageBox (_T("ok"));
-		Sleep(10000);
-	}
-	return 0;
-}
-
-COPTBZDoc::COPTBZDoc()
-{
-	// TODO: 在此添加一次性构造代码
 	if(!optInitialize())
 	{
 		cout<<"init error"<<endl;
@@ -70,6 +59,21 @@ COPTBZDoc::COPTBZDoc()
 	double *i=new double;
 	 x.GetData(i,1);
 	 cout<<"x="<<*i<<endl; 
+
+	 AfxMessageBox (_T("Call success"));
+	
+	while (TRUE)
+	{
+	
+		Sleep(100000);
+	}
+	return 0;
+}
+
+COPTBZDoc::COPTBZDoc()
+{
+	// TODO: 在此添加一次性构造代码
+
 
 	 pWinoptThread = AfxBeginThread(optThread,this);
 
