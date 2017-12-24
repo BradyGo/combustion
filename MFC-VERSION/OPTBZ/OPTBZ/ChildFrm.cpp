@@ -8,6 +8,7 @@
 #include "ChildFrm.h"
 
 #include "ModelView.h"
+#include "Control.h"
 
 
 #ifdef _DEBUG
@@ -62,7 +63,7 @@ BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/, CCreateContext* pConte
 		return FALSE;   
 
 	// 创建下面窗格中的视图   
-	if (!m_wndSplitter.CreateView(1, 1, RUNTIME_CLASS(CModelView), CSize(rc.Width()/2, rc.Height()/2), pContext))   
+	if (!m_wndSplitter.CreateView(1, 1, RUNTIME_CLASS(CControl), CSize(rc.Width()/2, rc.Height()/2), pContext))   
 		return FALSE;   
 
 	return TRUE;

@@ -29,8 +29,14 @@ void CModelView::OnDraw(CDC* pDC)
 {
 	CDocument* pDoc = GetDocument();
 	// TODO: 在此添加绘制代码
-	int m;
-	m = 2;
+	CClientDC dc(this);
+	CString str; 
+
+	int a = 12345; 
+
+	str.Format(_T("a = %d, hello this is model view!"), a); 
+
+	dc.TextOut(10, 20, str);
 }
 
 
