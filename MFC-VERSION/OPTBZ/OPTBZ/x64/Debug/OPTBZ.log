@@ -1,13 +1,12 @@
-﻿生成启动时间为 2018/1/8 0:04:05。
+﻿生成启动时间为 2018/1/8 6:46:48。
      1>项目“F:\combus\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”在节点 2 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“x64\Debug\OPTBZ.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\OPTBZ.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt OPTBZDoc.cpp
-         OPTBZDoc.cpp
-       ResourceCompile:
          所有输出均为最新。
+       ResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0804" /Ix64\Debug\ /nologo /fo"x64\Debug\OPTBZ.res" OPTBZ.rc 
        ManifestResourceCompile:
          所有输出均为最新。
        Link:
@@ -17,6 +16,7 @@
          x64\Debug\ClassView.obj
          x64\Debug\Control.obj
          x64\Debug\FileView.obj
+         x64\Debug\GraphView.obj
          x64\Debug\MainFrm.obj
          x64\Debug\ModelView.obj
          x64\Debug\OPTBZ.obj
@@ -41,4 +41,4 @@
 
 生成成功。
 
-已用时间 00:00:07.54
+已用时间 00:00:00.74

@@ -214,6 +214,7 @@
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="FileView.h" />
+    <ClInclude Include="GraphView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="ModelView.h" />
     <ClInclude Include="opt.h" />
@@ -232,6 +233,7 @@
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="FileView.cpp" />
+    <ClCompile Include="GraphView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="ModelView.cpp" />
     <ClCompile Include="OPTBZ.cpp" />
