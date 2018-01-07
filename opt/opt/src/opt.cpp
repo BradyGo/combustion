@@ -1,6 +1,6 @@
 //
 // MATLAB Compiler: 4.17 (R2012a)
-// Date: Sat Nov 11 16:56:49 2017
+// Date: Sun Jan 07 21:54:04 2018
 // Arguments: "-B" "macro_default" "-W" "cpplib:opt" "-T" "link:lib" "-d"
 // "F:\combus\opt\opt\src" "-w" "enable:specified_file_mismatch" "-w"
 // "enable:repeated_file" "-w" "enable:switch_ignored" "-w"
@@ -196,9 +196,9 @@ void MW_CALL_CONV insensitivelearning(int nargout, mwArray& w, const mwArray& X,
 }
 
 LIB_opt_CPP_API 
-void MW_CALL_CONV optmain(int nargout, mwArray& xxx, const mwArray& aaa, const mwArray& 
-                          bbb)
+void MW_CALL_CONV optmain(int nargout, mwArray& res, const mwArray& opt, const mwArray& 
+                          para)
 {
-  mclcppMlfFeval(_mcr_inst, "optmain", nargout, 1, 2, &xxx, &aaa, &bbb);
+  mclcppMlfFeval(_mcr_inst, "optmain", nargout, 1, 2, &res, &opt, &para);
 }
 

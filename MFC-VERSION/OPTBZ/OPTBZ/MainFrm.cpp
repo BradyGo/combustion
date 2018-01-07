@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "OPTBZ.h"
+//#include "OutputWnd.h"
 
 #include "MainFrm.h"
 
@@ -453,4 +454,10 @@ BOOL CMainFrame::OnCreateClient(LPCREATESTRUCT lpcs, CCreateContext* pContext)
 		return FALSE;   
 		*/
 	return CMDIFrameWndEx::OnCreateClient(lpcs, pContext);
+}
+
+int CMainFrame::AddStrOutputDebugWnd(CString str)
+{
+	m_wndOutput.AddDebugString(str);  
+	return 0;
 }

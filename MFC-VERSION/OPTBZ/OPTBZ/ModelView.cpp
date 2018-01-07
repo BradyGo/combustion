@@ -31,10 +31,7 @@ void CModelView::OnDraw(CDC* pDC)
 	// TODO: 在此添加绘制代码
 	CClientDC dc(this);
 	CString str; 
-
-	int a = 12345; 
-
-	str.Format(_T("a = %d, hello this is model view!"), a); 
+	str = "Hello this is model view!";
 
 	dc.TextOut(10, 20, str);
 }

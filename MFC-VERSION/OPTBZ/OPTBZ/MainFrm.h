@@ -18,6 +18,7 @@ public:
 
 // ÌØÐÔ
 public:
+	int AddStrOutputDebugWnd(CString str);
 
 // ²Ù×÷
 public:

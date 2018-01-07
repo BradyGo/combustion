@@ -1,5 +1,7 @@
-function xxx = optmain(aaa,bbb)
-%clc;close all;clear all
+function res = optmain(opt,para)
+%res 返回结果（程序执行到了哪一步）
+%opt 建模　or　优化
+%para 程序运算所需其他参数　
 %取数据
 X=xlsread('2016px.xls','sheet1');
 Y=xlsread('2016px.xls','sheet4');%排烟温度
@@ -18,6 +20,7 @@ tY1 = YY(a2+1:a3);
 tY2 = ZZ(a2+1:a3);
 Options = [8 0 5]; 
 
+if opt==1
 %空预器入口排烟温度建模及预测
 tic;
 [Tree1,C1,Err1] =FTreeIII( [ones(size(X1 ,1),1) X1] ,Y1 ,Options,0.28);
@@ -34,8 +37,40 @@ t2 = toc;
 [RMSE2,Mu2,YFT22] = EvalTree( [ones(size(X1 ,1),1) X1] ,Z1 ,Tree2 ,C2);
 [tRMSE2,Mu2,tYFT22] = EvalTree( [ones(size(tX ,1),1) tX] ,tY2 ,Tree2 ,C2);
 
-tYFT11;
-tYFT22;
+xlswrite('Exa.xls',Tree1,'sheet1');
+xlswrite('Exa.xls',C1,'sheet2');
+xlswrite('Exa.xls',Tree2,'sheet3');
+xlswrite('Exa.xls',C2,'sheet4');
+xlswrite('Exa.xls',tYFT11,'sheet5');
+xlswrite('Exa.xls',tYFT22,'sheet6');
+xlswrite('Exa.xls',RMSE1,'sheet7');
+xlswrite('Exa.xls',tRMSE1,'sheet8');
+xlswrite('Exa.xls',RMSE2,'sheet9');
+xlswrite('Exa.xls',tRMSE2,'sheet10');
+xlswrite('Exa.xls',YFT11,'sheet11');
+xlswrite('Exa.xls',YFT22,'sheet12');
+
+
+res = 1;
+return
+end
+
+Tree1 = xlsread('Exa.xls','sheet1');
+C1 = xlsread('Exa.xls','sheet2');
+Tree2 = xlsread('Exa.xls','sheet3');
+C2 = xlsread('Exa.xls','sheet4');
+tYFT11 = xlsread('Exa.xls','sheet5');
+tYFT22 = xlsread('Exa.xls','sheet6');
+RMSE1 = xlsread('Exa.xls','sheet7');
+tRMSE1 = xlsread('Exa.xls','sheet8');
+RMSE2 = xlsread('Exa.xls','sheet9');
+tRMSE2 = xlsread('Exa.xls','sheet10');
+YFT11 = xlsread('Exa.xls','sheet11');
+YFT22 = xlsread('Exa.xls','sheet12');
+
+
+
+
 %不可控变量
 load =tX(:,1);%负荷
 Q =tX(:,2);%供热量
@@ -245,4 +280,4 @@ RMSE11=sqrt(sum((tYFT11-tY1).^2)/50);%测试样本均方根误差
 RMSE222=sqrt(sum((YFT22-Z1).^2)/550);%NOx排放量训练样本均方根误差
 RMSE22=sqrt(sum((tYFT22-tY2).^2)/50);%测试样本均方根误差
 
-xxx = aaa+bbb+1
+res = 2;

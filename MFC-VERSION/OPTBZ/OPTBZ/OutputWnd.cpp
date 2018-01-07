@@ -106,9 +106,9 @@ void COutputWnd::AdjustHorzScroll(CListBox& wndListBox)
 
 void COutputWnd::FillBuildWindow()
 {
-	m_wndOutputBuild.AddString(_T("生成输出正显示在此处。"));
-	m_wndOutputBuild.AddString(_T("输出正显示在列表视图的行中"));
-	m_wndOutputBuild.AddString(_T("但您可以根据需要更改其显示方式..."));
+//	m_wndOutputBuild.AddString(_T("生成输出正显示在此处。"));
+//	m_wndOutputBuild.AddString(_T("输出正显示在列表视图的行中"));
+//	m_wndOutputBuild.AddString(_T("但您可以根据需要更改其显示方式..."));
 }
 
 void COutputWnd::FillDebugWindow()
@@ -130,6 +130,15 @@ void COutputWnd::UpdateFonts()
 	m_wndOutputBuild.SetFont(&afxGlobalData.fontRegular);
 	m_wndOutputDebug.SetFont(&afxGlobalData.fontRegular);
 	m_wndOutputFind.SetFont(&afxGlobalData.fontRegular);
+}
+
+int COutputWnd::AddDebugString(CString str)
+{
+	m_wndOutputBuild.AddString(str);
+
+	m_wndOutputBuild.SendMessage(WM_VSCROLL,SB_BOTTOM); 
+	
+	return 0;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -182,6 +191,7 @@ void COutputList::OnEditCopy()
 void COutputList::OnEditClear()
 {
 	MessageBox(_T("清除输出"));
+
 }
 
 void COutputList::OnViewOutput()
@@ -197,3 +207,5 @@ void COutputList::OnViewOutput()
 
 	}
 }
+
+

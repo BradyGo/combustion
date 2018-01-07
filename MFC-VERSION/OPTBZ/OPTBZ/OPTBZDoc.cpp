@@ -16,6 +16,7 @@
 #include "mclmcr.h"
 #include "matrix.h"
 #include "mclcppclass.h"
+#include "MainFrm.h"
 
 using namespace std;
 
@@ -46,26 +47,33 @@ UINT optThread(LPVOID pParam)
 		cout<<"init error"<<endl;
 	}
 	
+
+	
+	
 	// 为变量分配内存空间，可以查帮助mwArray
 	mwArray a(1,1,mxDOUBLE_CLASS);
     mwArray b(1,1,mxDOUBLE_CLASS);
-	a(1,1)=20;
+	a(1,1)=1;
     b(1,1)=30;
 	mwArray x(1,1,mxDOUBLE_CLASS);
 
 	optmain(1,x,a,b);
 
-
 	double *i=new double;
-	 x.GetData(i,1);
-	 cout<<"x="<<*i<<endl; 
+	x.GetData(i,1);
+	cout<<"x="<<*i<<endl; 
 
-	 AfxMessageBox (_T("Call success"));
-	
+	CString m_strOutput = _T("Modeled succeed!");
+	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
+	pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量  
+	 
+	a(1,1)=2;
 	while (TRUE)
 	{
-	
-		Sleep(100000);
+		optmain(1,x,a,b);
+		Sleep(1000);
+		m_strOutput = _T("Optimization succeed!");
+		pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量
 	}
 	return 0;
 }
