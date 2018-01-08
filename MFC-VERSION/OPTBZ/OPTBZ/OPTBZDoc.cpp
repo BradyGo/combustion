@@ -41,39 +41,60 @@ END_MESSAGE_MAP()
 
 UINT optThread(LPVOID pParam)
 {
-
-	if(!optInitialize())
-	{
-		cout<<"init error"<<endl;
-	}
 	
 
+	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
+	CString m_strOutput = _T("Modeling......");
+	pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量
+	
+	if(!optInitialize())
+	{
+		//cout<<"init error"<<endl;
+		m_strOutput = _T("dll init error");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
+	}
+	
+	
 	
 	
 	// 为变量分配内存空间，可以查帮助mwArray
-	mwArray a(1,1,mxDOUBLE_CLASS);
-    mwArray b(1,1,mxDOUBLE_CLASS);
-	a(1,1)=1;
-    b(1,1)=30;
-	mwArray x(1,1,mxDOUBLE_CLASS);
+	mwArray opt(1,1,mxDOUBLE_CLASS);
+    mwArray para(1,1,mxDOUBLE_CLASS);
+	opt(1,1)=1;
+    para(1,1)=30;
+	mwArray res(1,1,mxDOUBLE_CLASS);
 
-	optmain(1,x,a,b);
+	optmain(1,res,opt,para);
+	
+	m_strOutput = _T("Modeled end!");
+	pMain->AddStrOutputDebugWnd(m_strOutput);
 
 	double *i=new double;
-	x.GetData(i,1);
-	cout<<"x="<<*i<<endl; 
+	res.GetData(i,1);
+	//cout<<"x="<<*i<<endl; 
+	if (*i==1)
+	{
+		m_strOutput = _T("Modeled succed!");
+	} 
+	else
+	{
+		m_strOutput = _T("Modeled failed!");
+	}
 
-	CString m_strOutput = _T("Modeled succeed!");
-	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
-	pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量  
+	//m_strOutput.Format(_T("x = %f"),*i);
+	pMain->AddStrOutputDebugWnd(m_strOutput);  
 	 
-	a(1,1)=2;
+	opt(1,1)=2; //调用opt
 	while (TRUE)
 	{
-		optmain(1,x,a,b);
-		Sleep(1000);
+		m_strOutput = _T("Optimize begin......");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
+		optmain(1,res,opt,para);
+		
 		m_strOutput = _T("Optimization succeed!");
-		pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量
+		pMain->AddStrOutputDebugWnd(m_strOutput);
+		
+		Sleep(1000);
 	}
 	return 0;
 }
