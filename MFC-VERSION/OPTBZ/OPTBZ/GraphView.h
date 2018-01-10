@@ -25,6 +25,12 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
 
 	DECLARE_MESSAGE_MAP()
+public:
+	virtual void OnInitialUpdate();
+	afx_msg void OnSize(UINT nType, int cx, int cy);
+	CRect rect;
+	// nID为控件ID，x,y分别为对话框的当前长和宽
+	void ChangeSize(UINT nID, int x, int y);
 };
 
 

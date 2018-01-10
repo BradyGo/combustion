@@ -216,6 +216,7 @@
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="EnergySave.h" />
     <ClInclude Include="FileView.h" />
     <ClInclude Include="GraphView.h" />
     <ClInclude Include="MainFrm.h" />
@@ -235,6 +236,7 @@
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="Control.cpp" />
+    <ClCompile Include="EnergySave.cpp" />
     <ClCompile Include="FileView.cpp" />
     <ClCompile Include="GraphView.cpp" />
     <ClCompile Include="MainFrm.cpp" />

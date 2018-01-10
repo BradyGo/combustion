@@ -31,7 +31,7 @@ void CModelView::OnDraw(CDC* pDC)
 	// TODO: 在此添加绘制代码
 	CClientDC dc(this);
 	CString str; 
-	str = "Hello this is model view!";
+	str = "建模及维护窗口!";
 
 	dc.TextOut(10, 20, str);
 }

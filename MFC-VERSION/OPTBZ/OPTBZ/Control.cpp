@@ -33,9 +33,9 @@ void CControl::OnDraw(CDC* pDC)
 	CClientDC dc(this);
 	CString str; 
 
-	int a = 12345; 
+	int a = 666888; 
 
-	str.Format(_T("a = %d, hello this is control view!"), a); 
+	str.Format(_T("a = %d, 运行指导窗口!"), a); 
 
 	dc.TextOut(10, 20, str);
 }

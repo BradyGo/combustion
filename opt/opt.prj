@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.library.cpp" target-name="C++ Shared Library" name="opt" location="F:\Combus_inuse\opt" file="F:\Combus_inuse\opt\opt.prj" build-checksum="3364069648">
-    <param.project.name>F:\Combus_inuse\opt\opt.prj</param.project.name>
+  <configuration target="target.library.cpp" target-name="C++ Shared Library" name="opt" location="F:\combus\opt" file="F:\combus\opt\opt.prj" build-checksum="1243264246">
+    <param.project.name>F:\combus\opt\opt.prj</param.project.name>
     <param.target.type>C++ Shared Library</param.target.type>
     <param.appname>opt</param.appname>
     <param.intermediate>${PROJECT_ROOT}\opt\src</param.intermediate>
@@ -73,9 +73,9 @@
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files (x86)\MATLAB\R2012a</root>
+      <root>C:\Program Files\MATLAB\R2012a</root>
       <path>
-        <directory>C:\Users\kying\Documents\MATLAB</directory>
+        <directory>C:\Users\Admin\Documents\MATLAB</directory>
         <directory>${MATLAB_ROOT}\toolbox\hdlcoder\matlabhdlcoder\matlabhdlcoder</directory>
         <directory>${MATLAB_ROOT}\toolbox\hdlcoder\matlabhdlcoder</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlabxl\matlabxl</directory>

@@ -104,14 +104,14 @@ void COutputWnd::AdjustHorzScroll(CListBox& wndListBox)
 	dc.SelectObject(pOldFont);
 }
 
-void COutputWnd::FillBuildWindow()
+void COutputWnd::FillDebugWindow()
 {
 //	m_wndOutputBuild.AddString(_T("生成输出正显示在此处。"));
 //	m_wndOutputBuild.AddString(_T("输出正显示在列表视图的行中"));
 //	m_wndOutputBuild.AddString(_T("但您可以根据需要更改其显示方式..."));
 }
 
-void COutputWnd::FillDebugWindow()
+void COutputWnd::FillBuildWindow()
 {
 	m_wndOutputDebug.AddString(_T("调试输出正显示在此处。"));
 	m_wndOutputDebug.AddString(_T("输出正显示在列表视图的行中"));
@@ -134,6 +134,13 @@ void COutputWnd::UpdateFonts()
 
 int COutputWnd::AddDebugString(CString str)
 {
+	SYSTEMTIME st; 
+	CString strDate,strTime; 
+	GetLocalTime(&st); 
+	strDate.Format(_T("%4d-%2d-%2d"),st.wYear,st.wMonth,st.wDay); 
+	strTime.Format(_T("%2d:%2d:%2d "),st.wHour,st.wMinute,st.wSecond);
+	str = strDate + strTime +str;
+
 	m_wndOutputBuild.AddString(str);
 
 	m_wndOutputBuild.SendMessage(WM_VSCROLL,SB_BOTTOM); 
