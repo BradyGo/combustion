@@ -68,11 +68,12 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft;C:\Program Files\MATLAB\R2012a\extern\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files\MATLAB\R2012a\bin\win64;C:\Program Files\MATLAB\R2012\extern\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files\MATLAB\R2012a\bin\win64;F:\combus\MFC-VERSION\OPTBZ\OPTBZ;C:\Program Files\MATLAB\R2012\extern\lib\win64\microsoft;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\MATLAB\R2012a\bin\win32;C:\Program Files %28x86%29\MATLAB\R2012a\extern\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\MATLAB\R2012a\bin\win32;F:\combus\MFC-VERSION\OPTBZ\OPTBZ;C:\Program Files %28x86%29\MATLAB\R2012a\extern\lib\win32\microsoft;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -86,11 +87,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\MATLAB\R2012a\extern\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>odbc32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>odbc32.lib;libeng.lib;libmat.lib;libmex.lib;libmx.lib;mclmcrrt.lib;opt.lib;mclmcr.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -114,7 +117,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>odbc32.lib;libeng.lib;libmat.lib;libmex.lib;libmx.lib;mclmcrrt.lib;mclmcr.lib;opt.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Program Files\MATLAB\R2012\extern\lib\win64\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Program Files %28x86%29\MATLAB\R2012a\extern\lib\win32\microsoft;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
