@@ -38,6 +38,8 @@ END_MESSAGE_MAP()
 
 // COPTBZDoc 构造/析构
 
+int OptFlag;
+int ComuFlag;//
 
 UINT optThread(LPVOID pParam)
 {
@@ -75,6 +77,7 @@ UINT optThread(LPVOID pParam)
 	if (*i==1)
 	{
 		m_strOutput = _T("Modeled succed!");
+		ComuFlag = 1;
 	} 
 	else
 	{
@@ -85,17 +88,50 @@ UINT optThread(LPVOID pParam)
 	pMain->AddStrOutputDebugWnd(m_strOutput);  
 	 
 	opt(1,1)=2; //调用opt
-	while (TRUE)
+	while(TRUE)
 	{
-		m_strOutput = _T("Optimize begin......");
-		pMain->AddStrOutputDebugWnd(m_strOutput);
-		optmain(1,res,opt,para);
-		
-		m_strOutput = _T("Optimization succeed!");
-		pMain->AddStrOutputDebugWnd(m_strOutput);
-		
-		Sleep(1000);
+		while (OptFlag ==1 )
+		{
+			ComuFlag = 0;
+			m_strOutput = _T("Optimize begin......");
+			pMain->AddStrOutputDebugWnd(m_strOutput);
+			optmain(1,res,opt,para);
+
+			m_strOutput = _T("Optimization succeed!");
+			pMain->AddStrOutputDebugWnd(m_strOutput);
+
+			ComuFlag = 1;
+			Sleep(10000);
+
+		}
+		Sleep(5000);
 	}
+
+
+	return 0;
+}
+
+UINT ComuThread(LPVOID pParam)
+{
+	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
+	CString m_strOutput = _T("Write Exl begin......");
+	pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量
+
+	while(TRUE)
+	{
+		while(ComuFlag == 1)
+		{
+			OptFlag = 0;
+			m_strOutput = _T("Write success!");
+			pMain->AddStrOutputDebugWnd(m_strOutput);
+			OptFlag = 1;
+			Sleep(5000);
+		}
+		Sleep(5000);
+	}
+	
+
+
 	return 0;
 }
 
@@ -103,8 +139,11 @@ COPTBZDoc::COPTBZDoc()
 {
 	// TODO: 在此添加一次性构造代码
 
+	 OptFlag = 0;
+	 ComuFlag = 0;
 
 	 pWinoptThread = AfxBeginThread(optThread,this);
+	 pWinoptThread = AfxBeginThread(ComuThread,this);
 
 
 
