@@ -213,9 +213,17 @@
     <None Include="UserImages.bmp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CApplication.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="Control.h" />
+    <ClInclude Include="CRange.h" />
+    <ClInclude Include="CRectangle.h" />
+    <ClInclude Include="CRectangles.h" />
+    <ClInclude Include="CWorkbook.h" />
+    <ClInclude Include="CWorkbooks.h" />
+    <ClInclude Include="CWorksheet.h" />
+    <ClInclude Include="CWorksheets.h" />
     <ClInclude Include="EnergySave.h" />
     <ClInclude Include="FileView.h" />
     <ClInclude Include="GraphView.h" />
