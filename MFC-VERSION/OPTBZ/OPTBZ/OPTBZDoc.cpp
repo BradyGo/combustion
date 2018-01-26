@@ -3,14 +3,7 @@
 //
 
 #include "stdafx.h"
-#include "CApplication.h"
-#include "CWorkbooks.h"
-#include "CWorkbook.h"
-#include "CWorksheets.h"
-#include "CWorksheet.h"
-#include "CRectangle.h"
-#include "CRectangles.h"
-#include "CRange.h"
+
 
 // SHARED_HANDLERS 可以在实现预览、缩略图和搜索筛选器句柄的
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
@@ -27,9 +20,19 @@
 #include "mclcppclass.h"
 #include "MainFrm.h"
 
+#include "CApplication.h"
+#include "CWorkbooks.h"
+#include "CWorkbook.h"
+#include "CWorksheets.h"
+#include "CWorksheet.h"
+#include "CRectangle.h"
+#include "CRectangles.h"
+#include "CRange.h"
+
+#import "msxml3.dll"
+using namespace MSXML2;
 
 using namespace std;
-
 
 CWinThread *pWinoptThread;
 
@@ -131,11 +134,11 @@ UINT ComuThread(LPVOID pParam)
 	hr = CoInitialize(NULL);     
 	if(FAILED(hr))
 	{    
-		AfxMessageBox(_T("Failed to call Coinitialize()" ));
+		m_strOutput = _T("Failed to call Coinitialize()");
+		pMain->AddStrOutputDebugWnd(m_strOutput);//调用CMainFrame中的自动以函数，m_strOutput是编辑框的变量
 	}
 	
-	
-	
+		
 	CApplication ExcelApp;
 	CWorkbooks books;
 	CWorkbook book;
@@ -147,7 +150,8 @@ UINT ComuThread(LPVOID pParam)
 	//创建Excel 服务器(启动Excel)
 	if(!ExcelApp.CreateDispatch(_T("Excel.Application"),NULL))
 	{
-		AfxMessageBox(_T("启动Excel服务器失败!"));
+		m_strOutput = _T("启动Excel服务器失败!");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
 		return -1;
 	}
 
@@ -157,25 +161,28 @@ UINT ComuThread(LPVOID pParam)
 	strExcelVersion = strExcelVersion.Tokenize(_T("."), iStart);
 	if (_T("11") == strExcelVersion)
 	{
-		AfxMessageBox(_T("当前Excel的版本是2003。"));
+		m_strOutput = _T("当前Excel的版本是2003。");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
 	}
 	else if (_T("15") == strExcelVersion)
 	{
-		AfxMessageBox(_T("当前Excel的版本是2013。"));
+		m_strOutput = _T("当前Excel的版本是2013。");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
 	}
 	else
 	{
-		AfxMessageBox(_T("当前Excel的版本是其他版本。"));
+		m_strOutput = _T("当前Excel的版本是其他版本。");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
 	}
 
-	ExcelApp.put_Visible(TRUE);
+	ExcelApp.put_Visible(FALSE);//工作表可见不可见选项By k.ying_zhang
 	ExcelApp.put_UserControl(FALSE);
 
 	/*得到工作簿容器*/
 	books.AttachDispatch(ExcelApp.get_Workbooks());
 
 	/*打开一个工作簿，如不存在，则新增一个工作簿*/
-	CString strBookPath = _T("C:\\tmp.xls");
+	CString strBookPath = _T("D:\\Model.xlsx");
 	try
 	{
 		/*打开一个工作簿*/
@@ -265,7 +272,7 @@ UINT ComuThread(LPVOID pParam)
 //	system("pause");
 
 	/*根据文件的后缀名选择保存文件的格式*/
-
+	book.Save();
 
 	/*释放资源*/
 	sheet.ReleaseDispatch();
@@ -288,9 +295,6 @@ UINT ComuThread(LPVOID pParam)
 		}
 		Sleep(5000);
 	}
-	
-
-
 	return 0;
 }
 
@@ -304,7 +308,7 @@ COPTBZDoc::COPTBZDoc()
 	 pWinoptThread = AfxBeginThread(optThread,this);
 	 pWinoptThread = AfxBeginThread(ComuThread,this);
 
-
+	 OnXmlSave(OptFlag);
 
 }
 
@@ -339,6 +343,45 @@ void COPTBZDoc::Serialize(CArchive& ar)
 		// TODO: 在此添加加载代码
 	}
 }
+
+int COPTBZDoc::OnXmlSave(int flag)
+{
+	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
+	CString m_strOutput = _T("OnXmlSave begin......");
+	pMain->AddStrOutputDebugWnd(m_strOutput);
+	
+	MSXML2::IXMLDOMDocumentPtr pDoc;
+	MSXML2::IXMLDOMElementPtr xmlRoot;
+	HRESULT hr = pDoc.CreateInstance(__uuidof(MSXML2::DOMDocument30));
+	if(!SUCCEEDED(hr))
+	{
+		m_strOutput = _T("OnXmlSave init error......");
+		pMain->AddStrOutputDebugWnd(m_strOutput);
+		return 0;
+	}
+	pDoc->raw_createElement((_bstr_t)(char*)"工程1", &xmlRoot);
+	pDoc->raw_appendChild(xmlRoot, NULL);
+
+	MSXML2::IXMLDOMElementPtr childNode;
+	pDoc->raw_createElement((_bstr_t)(char*)"回路1", &childNode);
+	childNode->Puttext("主汽温");
+	childNode->setAttribute("阀门1开度", "70");
+	childNode->setAttribute("阀门2开度", "20");
+	xmlRoot->appendChild(childNode);
+
+	pDoc->raw_createElement((_bstr_t)(char*)"回路2", &childNode);
+	childNode->Puttext("再热汽温");
+	childNode->setAttribute("阀门1开度", "39");
+	childNode->setAttribute("阀门2开度", "33");
+	xmlRoot->appendChild(childNode);
+
+	pDoc->save("D:\\test.xml");
+
+	m_strOutput = _T("OnXmlSave succed!");
+	pMain->AddStrOutputDebugWnd(m_strOutput);
+	return 0;
+}
+
 
 #ifdef SHARED_HANDLERS
 

@@ -113,9 +113,9 @@ void COutputWnd::FillDebugWindow()
 
 void COutputWnd::FillBuildWindow()
 {
-	m_wndOutputDebug.AddString(_T("调试输出正显示在此处。"));
-	m_wndOutputDebug.AddString(_T("输出正显示在列表视图的行中"));
-	m_wndOutputDebug.AddString(_T("但您可以根据需要更改其显示方式..."));
+	m_wndOutputDebug.AddString(_T("软件名称："));
+	m_wndOutputDebug.AddString(_T("公司名称："));
+	m_wndOutputDebug.AddString(_T("软件版本号:"));
 }
 
 void COutputWnd::FillFindWindow()
