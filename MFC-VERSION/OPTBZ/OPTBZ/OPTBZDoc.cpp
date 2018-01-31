@@ -359,17 +359,21 @@ int COPTBZDoc::OnXmlSave(int flag)
 		pMain->AddStrOutputDebugWnd(m_strOutput);
 		return 0;
 	}
-	pDoc->raw_createElement((_bstr_t)(char*)"工程1", &xmlRoot);
+	pDoc->raw_createElement((_bstr_t)(char*)"燃烧优化", &xmlRoot);
 	pDoc->raw_appendChild(xmlRoot, NULL);
 
 	MSXML2::IXMLDOMElementPtr childNode;
-	pDoc->raw_createElement((_bstr_t)(char*)"回路1", &childNode);
-	childNode->Puttext("主汽温");
-	childNode->setAttribute("阀门1开度", "70");
-	childNode->setAttribute("阀门2开度", "20");
+	pDoc->raw_createElement((_bstr_t)(char*)"可控输入", &childNode);
+	//pDoc->createNode((_bstr_t)(char*)"给粉机A层比例");	
 	xmlRoot->appendChild(childNode);
 
-	pDoc->raw_createElement((_bstr_t)(char*)"回路2", &childNode);
+	pDoc->raw_createElement((_bstr_t)(char*)"不可控输入", &childNode);
+	childNode->Puttext("再热汽温");
+	childNode->setAttribute("阀门1开度", "39");
+	childNode->setAttribute("阀门2开度", "33");
+	xmlRoot->appendChild(childNode);
+
+	pDoc->raw_createElement((_bstr_t)(char*)"目标", &childNode);
 	childNode->Puttext("再热汽温");
 	childNode->setAttribute("阀门1开度", "39");
 	childNode->setAttribute("阀门2开度", "33");
