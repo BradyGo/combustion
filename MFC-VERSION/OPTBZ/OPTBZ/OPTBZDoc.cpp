@@ -355,33 +355,37 @@ int COPTBZDoc::OnXmlSave(int flag)
 	HRESULT hr = pDoc.CreateInstance(__uuidof(MSXML2::DOMDocument30));
 	if(!SUCCEEDED(hr))
 	{
-		m_strOutput = _T("OnXmlSave init error......");
+		m_strOutput = _T("OnXmlWrite init error......");
 		pMain->AddStrOutputDebugWnd(m_strOutput);
 		return 0;
 	}
 	pDoc->raw_createElement((_bstr_t)(char*)"燃烧优化", &xmlRoot);
 	pDoc->raw_appendChild(xmlRoot, NULL);
 
-	MSXML2::IXMLDOMElementPtr childNode;
+	MSXML2::IXMLDOMElementPtr childNode,pElement;
 	pDoc->raw_createElement((_bstr_t)(char*)"可控输入", &childNode);
-	//pDoc->createNode((_bstr_t)(char*)"给粉机A层比例");	
-	xmlRoot->appendChild(childNode);
+	xmlRoot->appendChild(childNode);	
+	pElement = pDoc->createElement((_bstr_t)(char*)"给粉机A层比例");	
+	childNode->appendChild(pElement);
+	pElement = pDoc->createElement((_bstr_t)(char*)"给粉机B层比例");	
+	childNode->appendChild(pElement);
 
 	pDoc->raw_createElement((_bstr_t)(char*)"不可控输入", &childNode);
-	childNode->Puttext("再热汽温");
-	childNode->setAttribute("阀门1开度", "39");
-	childNode->setAttribute("阀门2开度", "33");
 	xmlRoot->appendChild(childNode);
+	pElement = pDoc->createElement((_bstr_t)(char*)"负荷");	
+	childNode->appendChild(pElement);
+	pElement = pDoc->createElement((_bstr_t)(char*)"供热量");	
+	childNode->appendChild(pElement);
+	pElement = pDoc->createElement((_bstr_t)(char*)"给水温度");	
+	childNode->appendChild(pElement);
+
 
 	pDoc->raw_createElement((_bstr_t)(char*)"目标", &childNode);
-	childNode->Puttext("再热汽温");
-	childNode->setAttribute("阀门1开度", "39");
-	childNode->setAttribute("阀门2开度", "33");
 	xmlRoot->appendChild(childNode);
 
 	pDoc->save("D:\\test.xml");
 
-	m_strOutput = _T("OnXmlSave succed!");
+	m_strOutput = _T("OnXmlWrite succed!");
 	pMain->AddStrOutputDebugWnd(m_strOutput);
 	return 0;
 }

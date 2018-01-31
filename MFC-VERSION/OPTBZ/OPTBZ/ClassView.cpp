@@ -134,12 +134,12 @@ void CClassView::FillClassView()
 
 	char *szXmlFile = "D:\\test.xml"; //上篇创建的xml文档
     MSXML2::IXMLDOMDocumentPtr pDoc = NULL; // xml文档
-    MSXML2::IXMLDOMNodeListPtr pNodeList = NULL; // 节点链表
+    MSXML2::IXMLDOMNodeListPtr pNodeList = NULL,pChildNodeList = NULL; // 节点链表
     MSXML2::IXMLDOMElementPtr pRootElement = NULL, pElement = NULL; // 根节点(元素)
-    MSXML2::IXMLDOMNodePtr pNode = NULL, pNode1 = NULL; // 节点
+    MSXML2::IXMLDOMNodePtr pNode = NULL, ppNode = NULL; // 节点
     MSXML2::IXMLDOMNamedNodeMapPtr pAttrList = NULL; // 属性链表
     MSXML2::IXMLDOMAttributePtr pAttrNode = NULL; // 属性
-    long lChilds, lAttr, i;
+    long lChilds, llChilds,lAttr, i;
 
     HRESULT hr = pDoc.CreateInstance(__uuidof(MSXML2::DOMDocument30));
     if (FAILED(hr))
@@ -164,6 +164,7 @@ void CClassView::FillClassView()
 	m_wndClassView.SetItemState(hRoot, TVIS_BOLD, TVIS_BOLD);
 
     // (2)根节点的一级子节点
+	HTREEITEM hClass;
     pNodeList = pRootElement->GetchildNodes(); // pRootElement->childNodes
     lChilds = pNodeList->Getlength(); // pNodeList->length
     for (i = 0; i < lChilds; i++)
@@ -171,7 +172,17 @@ void CClassView::FillClassView()
         pNode = pNodeList->Getitem(i); // pNodeList->item[i]
         if (pNode->GetnodeType() != MSXML2::NODE_COMMENT) // 过滤注释节点
         {
-            printf("child[%d] of [%s]: [%s]\n", i ,(char*)pRootElement->GetnodeName(), (char*)pNode->GetnodeName());
+       //     printf("child[%d] of [%s]: [%s]\n", i ,(char*)pRootElement->GetnodeName(), (char*)pNode->GetnodeName());
+			hClass = m_wndClassView.InsertItem((TCHAR*)pNode->GetnodeName(), 1, 1, hRoot);
+			pElement = p
+			pChildNodeList = pElement->GetchildNodes();
+			llChilds = pChildNodeList->Getlength();
+			for(int j=0;j<llChilds;j++ )
+			{
+				ppNode = pChildNodeList->Getitem(j);
+
+				m_wndClassView.InsertItem((TCHAR*)ppNode->GetnodeName(), 3, 3, hClass);
+			}
 
         }
     }
@@ -182,7 +193,7 @@ void CClassView::FillClassView()
 	
 
 
-	HTREEITEM hClass = m_wndClassView.InsertItem(_T("可控输入"), 1, 1, hRoot);
+//	HTREEITEM hClass = m_wndClassView.InsertItem(_T("可控输入"), 1, 1, hRoot);
 	m_wndClassView.InsertItem(_T("给粉机A层比例"), 3, 3, hClass);
 	m_wndClassView.InsertItem(_T("给粉机B层比例"), 3, 3, hClass);
 	m_wndClassView.InsertItem(_T("给粉机C层比例"), 3, 3, hClass);
