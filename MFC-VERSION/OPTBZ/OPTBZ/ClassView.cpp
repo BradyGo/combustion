@@ -127,19 +127,14 @@ void CClassView::OnSize(UINT nType, int cx, int cy)
 
 void CClassView::FillClassView()
 {
-//	CMainFrame * pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;  
-//	CString m_strOutput = _T("OnXmlSave begin......");
-//	pMain->AddStrOutputDebugWnd(m_strOutput);
-
-
-	char *szXmlFile = "D:\\test.xml"; //上篇创建的xml文档
+	char *szXmlFile = "D:\\test.xml"; 
     MSXML2::IXMLDOMDocumentPtr pDoc = NULL; // xml文档
-    MSXML2::IXMLDOMNodeListPtr pNodeList = NULL; // 节点链表
-    MSXML2::IXMLDOMElementPtr pRootElement = NULL, pElement = NULL; // 根节点(元素)
-    MSXML2::IXMLDOMNodePtr pNode = NULL, pNode1 = NULL; // 节点
+    MSXML2::IXMLDOMNodeListPtr pNodeList = NULL, pNode2List; // 节点链表
+    MSXML2::IXMLDOMElementPtr pRootElement = NULL; // 根节点(元素)
+    MSXML2::IXMLDOMNodePtr pNode = NULL, pNode2 = NULL; // 节点
     MSXML2::IXMLDOMNamedNodeMapPtr pAttrList = NULL; // 属性链表
     MSXML2::IXMLDOMAttributePtr pAttrNode = NULL; // 属性
-    long lChilds, lAttr, i;
+    long lChilds, lChilds2, i,j;
 
     HRESULT hr = pDoc.CreateInstance(__uuidof(MSXML2::DOMDocument30));
     if (FAILED(hr))
@@ -164,6 +159,7 @@ void CClassView::FillClassView()
 	m_wndClassView.SetItemState(hRoot, TVIS_BOLD, TVIS_BOLD);
 
     // (2)根节点的一级子节点
+	HTREEITEM hClass;
     pNodeList = pRootElement->GetchildNodes(); // pRootElement->childNodes
     lChilds = pNodeList->Getlength(); // pNodeList->length
     for (i = 0; i < lChilds; i++)
@@ -172,37 +168,27 @@ void CClassView::FillClassView()
         if (pNode->GetnodeType() != MSXML2::NODE_COMMENT) // 过滤注释节点
         {
             printf("child[%d] of [%s]: [%s]\n", i ,(char*)pRootElement->GetnodeName(), (char*)pNode->GetnodeName());
-
+			hClass = m_wndClassView.InsertItem((TCHAR*)pNode->GetnodeName(), 1, 1, hRoot);
+			pNode2List = pNode->GetchildNodes();
+			lChilds2 = pNode2List->Getlength();
+			for(j = 0; j < lChilds2; j++)
+			{
+				pNode2 = pNode2List->Getitem(j);
+				if(pNode2->GetnodeType() != MSXML2::NODE_COMMENT)
+				{
+					m_wndClassView.InsertItem((TCHAR*)pNode2->GetnodeName(), 3, 3, hClass);
+				}
+			}
+			m_wndClassView.Expand(hClass, TVE_EXPAND);
         }
     }
-
-
-
-	
-	
-
-
-	HTREEITEM hClass = m_wndClassView.InsertItem(_T("可控输入"), 1, 1, hRoot);
-	m_wndClassView.InsertItem(_T("给粉机A层比例"), 3, 3, hClass);
-	m_wndClassView.InsertItem(_T("给粉机B层比例"), 3, 3, hClass);
-	m_wndClassView.InsertItem(_T("给粉机C层比例"), 3, 3, hClass);
-
 	m_wndClassView.Expand(hRoot, TVE_EXPAND);
 
-	hClass = m_wndClassView.InsertItem(_T("不可控输入"), 1, 1, hRoot);
-	m_wndClassView.InsertItem(_T("负荷"), 3, 3, hClass);
-	m_wndClassView.InsertItem(_T("供热量"), 3, 3, hClass);
-	m_wndClassView.InsertItem(_T("给水温度"), 3, 3, hClass);
-
-	hClass = m_wndClassView.InsertItem(_T("目标"), 1, 1, hRoot);
-	m_wndClassView.InsertItem(_T("氮氧化物平均值"), 4, 4, hClass);
-	m_wndClassView.InsertItem(_T("空预器入口烟温"), 3, 3, hClass);
-	m_wndClassView.InsertItem(_T("空预器出口烟温"), 3, 3, hClass);
-	m_wndClassView.Expand(hClass, TVE_EXPAND);
-
+/*
 	hClass = m_wndClassView.InsertItem(_T("Globals"), 2, 2, hRoot);
 	m_wndClassView.InsertItem(_T("theFakeApp"), 5, 5, hClass);
 	m_wndClassView.Expand(hClass, TVE_EXPAND);
+*/
 }
 
 void CClassView::OnContextMenu(CWnd* pWnd, CPoint point)

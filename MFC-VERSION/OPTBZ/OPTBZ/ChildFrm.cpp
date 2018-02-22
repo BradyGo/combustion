@@ -8,9 +8,9 @@
 #include "ChildFrm.h"
 
 #include "ModelView.h"
-#include "Control.h"
 #include "GraphView.h"
 #include "EnergySave.h"
+#include "Guide.h"
 
 
 #ifdef _DEBUG
@@ -58,7 +58,7 @@ BOOL CChildFrame::OnCreateClient(LPCREATESTRUCT /*lpcs*/, CCreateContext* pConte
 		return FALSE;   
 
 	// 创建下面窗格中的视图   
-	if (!m_wndSplitter.CreateView(1, 0, RUNTIME_CLASS(CControl), CSize(rc.Width()/2, rc.Height()/2), pContext))   
+	if (!m_wndSplitter.CreateView(1, 0, RUNTIME_CLASS(CGuide), CSize(rc.Width()/2, rc.Height()/2), pContext))   
 		return FALSE;   
 	// 创建上面窗格中的视图   
 	if (!m_wndSplitter.CreateView(0, 1, RUNTIME_CLASS(CGraphView),CSize(rc.Width()/2, rc.Height()/2), pContext))   

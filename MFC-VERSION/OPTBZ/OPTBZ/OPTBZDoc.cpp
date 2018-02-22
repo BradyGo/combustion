@@ -69,9 +69,6 @@ UINT optThread(LPVOID pParam)
 		pMain->AddStrOutputDebugWnd(m_strOutput);
 	}
 	
-	
-	
-	
 	// 为变量分配内存空间，可以查帮助mwArray
 	mwArray opt(1,1,mxDOUBLE_CLASS);
     mwArray para(1,1,mxDOUBLE_CLASS);
@@ -364,20 +361,30 @@ int COPTBZDoc::OnXmlSave(int flag)
 
 	MSXML2::IXMLDOMElementPtr childNode;
 	pDoc->raw_createElement((_bstr_t)(char*)"可控输入", &childNode);
-	//pDoc->createNode((_bstr_t)(char*)"给粉机A层比例");	
 	xmlRoot->appendChild(childNode);
+
+	MSXML2::IXMLDOMElementPtr childNode2;
+	pDoc->raw_createElement((_bstr_t)(char*)"给粉机A层比例", &childNode2);
+	childNode->appendChild(childNode2);
+	pDoc->raw_createElement((_bstr_t)(char*)"给粉机B层比例", &childNode2);
+	childNode->appendChild(childNode2);
+	pDoc->raw_createElement((_bstr_t)(char*)"给粉机C层比例", &childNode2);
+	childNode->appendChild(childNode2);
 
 	pDoc->raw_createElement((_bstr_t)(char*)"不可控输入", &childNode);
-	childNode->Puttext("再热汽温");
-	childNode->setAttribute("阀门1开度", "39");
-	childNode->setAttribute("阀门2开度", "33");
 	xmlRoot->appendChild(childNode);
+	
+	pDoc->raw_createElement((_bstr_t)(char*)"负荷", &childNode2);
+	childNode->appendChild(childNode2);
+	pDoc->raw_createElement((_bstr_t)(char*)"供热量", &childNode2);
+	childNode->appendChild(childNode2);
 
 	pDoc->raw_createElement((_bstr_t)(char*)"目标", &childNode);
-	childNode->Puttext("再热汽温");
-	childNode->setAttribute("阀门1开度", "39");
-	childNode->setAttribute("阀门2开度", "33");
 	xmlRoot->appendChild(childNode);
+	pDoc->raw_createElement((_bstr_t)(char*)"氮氧化物平均值", &childNode2);
+	childNode->appendChild(childNode2);
+	pDoc->raw_createElement((_bstr_t)(char*)"空预器入口烟温", &childNode2);
+	childNode->appendChild(childNode2);
 
 	pDoc->save("D:\\test.xml");
 

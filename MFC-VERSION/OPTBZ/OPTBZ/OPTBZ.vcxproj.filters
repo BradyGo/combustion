@@ -97,6 +97,7 @@
     <None Include="opt.dll">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OPTBZ.h">
@@ -144,9 +145,6 @@
     <ClInclude Include="ModelView.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Control.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="GraphView.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -175,6 +173,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="CRange.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Guide.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -215,13 +216,13 @@
     <ClCompile Include="ModelView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Control.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="GraphView.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="EnergySave.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Guide.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,13 +1,13 @@
-﻿生成启动时间为 2018/1/31 15:39:27。
+﻿生成启动时间为 2018/2/22 16:50:14。
      1>项目“F:\Combus_inuse\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\OPTBZ.lastbuildstate”。
        InitializeBuildStatus:
-         正在对“Debug\OPTBZ.unsuccessfulbuild”执行 Touch 任务。
+         正在创建“Debug\OPTBZ.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\MATLAB\R2012a\extern\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\OPTBZ.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\MATLAB\R2012a\extern\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\OPTBZ.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ChildFrm.cpp ClassView.cpp Control.cpp EnergySave.cpp FileView.cpp GraphView.cpp MainFrm.cpp ModelView.cpp OPTBZ.cpp OPTBZDoc.cpp OPTBZView.cpp OutputWnd.cpp PropertiesWnd.cpp ViewTree.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Program Files\MATLAB\R2012a\extern\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\OPTBZ.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ChildFrm.cpp ClassView.cpp EnergySave.cpp FileView.cpp GraphView.cpp Guide.cpp MainFrm.cpp ModelView.cpp OPTBZ.cpp OPTBZDoc.cpp OPTBZView.cpp OutputWnd.cpp PropertiesWnd.cpp ViewTree.cpp
          ViewTree.cpp
          PropertiesWnd.cpp
          OutputWnd.cpp
@@ -16,12 +16,11 @@
          OPTBZ.cpp
          ModelView.cpp
          MainFrm.cpp
+         Guide.cpp
          GraphView.cpp
          FileView.cpp
          EnergySave.cpp
-         Control.cpp
          ClassView.cpp
-     1>f:\combus_inuse\mfc-version\optbz\optbz\classview.cpp(142): warning C4101: “lAttr”: 未引用的局部变量
          ChildFrm.cpp
          正在生成代码...
        ResourceCompile:
@@ -33,10 +32,10 @@
          Debug\OPTBZ.exe.embed.manifest.res
          Debug\ChildFrm.obj
          Debug\ClassView.obj
-         Debug\Control.obj
          Debug\EnergySave.obj
          Debug\FileView.obj
          Debug\GraphView.obj
+         Debug\Guide.obj
          Debug\MainFrm.obj
          Debug\ModelView.obj
          Debug\OPTBZ.obj
@@ -56,10 +55,10 @@
          Debug\OPTBZ.exe.embed.manifest.res
          Debug\ChildFrm.obj
          Debug\ClassView.obj
-         Debug\Control.obj
          Debug\EnergySave.obj
          Debug\FileView.obj
          Debug\GraphView.obj
+         Debug\Guide.obj
          Debug\MainFrm.obj
          Debug\ModelView.obj
          Debug\OPTBZ.obj
@@ -78,4 +77,4 @@
 
 生成成功。
 
-已用时间 00:00:24.31
+已用时间 00:00:15.94
