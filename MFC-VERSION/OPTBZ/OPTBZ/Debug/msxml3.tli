@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (6130b3e4).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.40219.01 (6c9f51e7).
 //
-// f:\combus_inuse\mfc-version\optbz\optbz\debug\msxml3.tli
+// f:\combus\mfc-version\optbz\optbz\debug\msxml3.tli
 //
 // Wrapper implementations for Win32 type library msxml3.dll
-// compiler-generated file created 02/22/18 at 16:50:22 - DO NOT EDIT!
+// compiler-generated file created 03/05/18 at 06:04:53 - DO NOT EDIT!
 
 #pragma once
 

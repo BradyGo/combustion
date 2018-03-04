@@ -1,5 +1,5 @@
-﻿生成启动时间为 2018/2/22 16:50:14。
-     1>项目“F:\Combus_inuse\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”在节点 2 上(rebuild 个目标)。
+﻿生成启动时间为 2018/3/5 6:04:50。
+     1>项目“F:\combus\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\OPTBZ.lastbuildstate”。
        InitializeBuildStatus:
@@ -28,7 +28,7 @@
        ManifestResourceCompile:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\OPTBZ.exe.embed.manifest.res" Debug\OPTBZ_manifest.rc 
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft" odbc32.lib libeng.lib libmat.lib libmex.lib libmx.lib mclmcrrt.lib opt.lib mclmcr.lib /MANIFEST /ManifestFile:"Debug\OPTBZ.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.lib" /MACHINE:X86 Debug\OPTBZ.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft" odbc32.lib libeng.lib libmat.lib libmex.lib libmx.lib mclmcrrt.lib opt.lib mclmcr.lib /MANIFEST /ManifestFile:"Debug\OPTBZ.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.lib" /MACHINE:X86 Debug\OPTBZ.res
          Debug\OPTBZ.exe.embed.manifest.res
          Debug\ChildFrm.obj
          Debug\ClassView.obj
@@ -51,7 +51,7 @@
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\OPTBZ.exe.embed.manifest" /manifest Debug\OPTBZ.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\OPTBZ.exe.embed.manifest.res" Debug\OPTBZ_manifest.rc 
        LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft" odbc32.lib libeng.lib libmat.lib libmex.lib libmx.lib mclmcrrt.lib opt.lib mclmcr.lib /MANIFEST /ManifestFile:"Debug\OPTBZ.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.lib" /MACHINE:X86 Debug\OPTBZ.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Program Files\MATLAB\R2012a\extern\lib\win32\microsoft" odbc32.lib libeng.lib libmat.lib libmex.lib libmx.lib mclmcrrt.lib opt.lib mclmcr.lib /MANIFEST /ManifestFile:"Debug\OPTBZ.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.lib" /MACHINE:X86 Debug\OPTBZ.res
          Debug\OPTBZ.exe.embed.manifest.res
          Debug\ChildFrm.obj
          Debug\ClassView.obj
@@ -69,12 +69,12 @@
          Debug\stdafx.obj
          Debug\ViewTree.obj
          opt.lib
-         OPTBZ.vcxproj -> F:\Combus_inuse\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe
+         OPTBZ.vcxproj -> F:\combus\MFC-VERSION\OPTBZ\Debug\OPTBZ.exe
        FinalizeBuildStatus:
          正在删除文件“Debug\OPTBZ.unsuccessfulbuild”。
          正在对“Debug\OPTBZ.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“F:\Combus_inuse\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”(rebuild 个目标)的操作。
+     1>已完成生成项目“F:\combus\MFC-VERSION\OPTBZ\OPTBZ\OPTBZ.vcxproj”(rebuild 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:15.94
+已用时间 00:00:05.08

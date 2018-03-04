@@ -65,8 +65,8 @@ void CGraphView::OnSize(UINT nType, int cx, int cy)
 
 	if(nType!=SIZE_MINIMIZED )  //判断窗口是不是最小化了，因为窗口最小化之后 ，窗口的长和宽会变成0，当前一次变化的时就会出现除以0的错误操作
 	{
-		ChangeSize(IDC_MSCHART1,cx,cy);  //对每一个控件依次做调整
-
+//		ChangeSize(IDC_MSCHART1,cx,cy);  //对每一个控件依次做调整 
+//		ChangeSize(IDC_STATIC,cx,cy);
 		GetClientRect(&rect);   //最后要更新对话框的大小，当做下一次变化的旧坐标；
 	}
 }
