@@ -160,37 +160,28 @@ void CPropertiesWnd::InitPropList()
 	m_wndPropList.SetVSDotNetLook();
 	m_wndPropList.MarkModifiedProperties();
 
-	CMFCPropertyGridProperty* pGroup1 = new CMFCPropertyGridProperty(_T("外观"));
+	CMFCPropertyGridProperty* pGroup1 = new CMFCPropertyGridProperty(_T("点信息"));
 
-	pGroup1->AddSubItem(new CMFCPropertyGridProperty(_T("三维外观"), (_variant_t) false, _T("指定窗口的字体不使用粗体，并且控件将使用三维边框")));
+//	pGroup1->AddSubItem(new CMFCPropertyGridProperty(_T("点信息"), (_variant_t) false, _T("指定窗口的字体不使用粗体，并且控件将使用三维边框")));
 
-	CMFCPropertyGridProperty* pProp = new CMFCPropertyGridProperty(_T("边框"), _T("对话框外框"), _T("其中之一:“无”、“细”、“可调整大小”或“对话框外框”"));
-	pProp->AddOption(_T("无"));
+	CMFCPropertyGridProperty* pProp = new CMFCPropertyGridProperty(_T("点名"), _T("kksadfasfa"), _T("其中之一:“无”、“细”、“可调整大小”或“对话框外框”"));
+	pProp->AddOption(_T("kksadfasfa"));
 	pProp->AddOption(_T("细"));
 	pProp->AddOption(_T("可调整大小"));
 	pProp->AddOption(_T("对话框外框"));
 	pProp->AllowEdit(FALSE);
 
 	pGroup1->AddSubItem(pProp);
-	pGroup1->AddSubItem(new CMFCPropertyGridProperty(_T("标题"), (_variant_t) _T("关于"), _T("指定窗口标题栏中显示的文本")));
-
+	pGroup1->AddSubItem(new CMFCPropertyGridProperty(_T("点描述"), (_variant_t) _T("给粉机A层比例"), _T("指定窗口标题栏中显示的文本")));
+	pGroup1->AddSubItem(new CMFCPropertyGridProperty(_T("点类型"), (_variant_t) _T("AI"), _T("指定窗口标题栏中显示的文本")));
+	
 	m_wndPropList.AddProperty(pGroup1);
 
-	CMFCPropertyGridProperty* pSize = new CMFCPropertyGridProperty(_T("窗口大小"), 0, TRUE);
 
-	pProp = new CMFCPropertyGridProperty(_T("高度"), (_variant_t) 250l, _T("指定窗口的高度"));
-	pProp->EnableSpinControl(TRUE, 50, 300);
-	pSize->AddSubItem(pProp);
 
-	pProp = new CMFCPropertyGridProperty( _T("宽度"), (_variant_t) 150l, _T("指定窗口的宽度"));
-	pProp->EnableSpinControl(TRUE, 50, 200);
-	pSize->AddSubItem(pProp);
+	CMFCPropertyGridProperty* pGroup2 = new CMFCPropertyGridProperty(_T("优化设置"));
 
-	m_wndPropList.AddProperty(pSize);
-
-	CMFCPropertyGridProperty* pGroup2 = new CMFCPropertyGridProperty(_T("字体"));
-
-	LOGFONT lf;
+/*	LOGFONT lf;
 	CFont* font = CFont::FromHandle((HFONT) GetStockObject(DEFAULT_GUI_FONT));
 	font->GetLogFont(&lf);
 
@@ -198,8 +189,20 @@ void CPropertiesWnd::InitPropList()
 
 	pGroup2->AddSubItem(new CMFCPropertyGridFontProperty(_T("字体"), lf, CF_EFFECTS | CF_SCREENFONTS, _T("指定窗口的默认字体")));
 	pGroup2->AddSubItem(new CMFCPropertyGridProperty(_T("使用系统字体"), (_variant_t) true, _T("指定窗口使用“MS Shell Dlg”字体")));
-
+*/
 	m_wndPropList.AddProperty(pGroup2);
+
+	CMFCPropertyGridProperty* pSize = new CMFCPropertyGridProperty(_T("上下限"), 0, TRUE);
+
+	pProp = new CMFCPropertyGridProperty(_T("上限"), (_variant_t) 250l, _T("指定窗口的高度"));
+	pProp->EnableSpinControl(TRUE, 50, 300);
+	pSize->AddSubItem(pProp);
+
+	pProp = new CMFCPropertyGridProperty( _T("下限"), (_variant_t) 150l, _T("指定窗口的宽度"));
+	pProp->EnableSpinControl(TRUE, 50, 200);
+	pSize->AddSubItem(pProp);
+
+	m_wndPropList.AddProperty(pSize);
 
 	CMFCPropertyGridProperty* pGroup3 = new CMFCPropertyGridProperty(_T("杂项"));
 	pProp = new CMFCPropertyGridProperty(_T("(名称)"), _T("应用程序"));
@@ -218,7 +221,7 @@ void CPropertiesWnd::InitPropList()
 
 	m_wndPropList.AddProperty(pGroup3);
 
-	CMFCPropertyGridProperty* pGroup4 = new CMFCPropertyGridProperty(_T("层次结构"));
+/*	CMFCPropertyGridProperty* pGroup4 = new CMFCPropertyGridProperty(_T("层次结构"));
 
 	CMFCPropertyGridProperty* pGroup41 = new CMFCPropertyGridProperty(_T("第一个子级"));
 	pGroup4->AddSubItem(pGroup41);
@@ -232,6 +235,8 @@ void CPropertiesWnd::InitPropList()
 
 	pGroup4->Expand(FALSE);
 	m_wndPropList.AddProperty(pGroup4);
+
+*/
 }
 
 void CPropertiesWnd::OnSetFocus(CWnd* pOldWnd)
